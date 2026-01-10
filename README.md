@@ -1,9 +1,9 @@
 # Dự đoán Mức độ Hài lòng Nhân viên - IBM HR Analytics
 
 ## Thông tin nhóm
-- **Thành viên 1**: [Họ tên] - [MSSV] - [Email]
+- **Thành viên 1**: Lê Huy Anh Dũng - 23001846 - 23001846@hus.edu.vn
   - Công việc: Data Preprocessing, EDA, Clustering, Report Writing
-- **Thành viên 2**: [Họ tên] - [MSSV] - [Email]
+- **Thành viên 2**: Trần Duy Anh - 23001828 - 23001828@hus.edu.vn
   - Công việc: Dimensionality Reduction, Regression Models, Classification Models
 
 ## Mô tả đề tài
