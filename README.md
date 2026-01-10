@@ -30,7 +30,6 @@ Tải dataset từ Kaggle và đặt vào thư mục `data/raw/`
 
 ## Chạy thực nghiệm
 
-### Cách 1: Chạy từng notebook
 ```bash
 # Mở Jupyter Notebook
 jupyter notebook
@@ -38,27 +37,37 @@ jupyter notebook
 # Chạy lần lượt các notebook trong thư mục notebooks/
 # theo thứ tự 01 -> 06
 ```
-
-### Cách 2: Chạy script tổng hợp
-```bash
-python run_experiments.py
-```
-
 ## Kịch bản thực nghiệm
 
-### Experiment 1: Regression trên dữ liệu gốc
-- Models: Linear Regression, Ridge, Lasso, KNN, MLP
+### Experiment 1: Phân loại (Classification)
+- Target: JobSatisfaction (4 lớp: 1, 2, 3, 4)
+- Model
+Nhóm 1: Naive Bayes (GaussianNB)
+Nhóm 2: Logistic Regression (Softmax)
+Nhóm 3: SVM (RBF kernel)
+- Dữ liệu:
+Dữ liệu gốc (Original features)
+Dữ liệu giảm chiều (PCA - 95% variance)
 - Train/Test splits: 80/20, 70/30, 60/40
-- Metrics: RMSE, MAE, R²
+- Metrics: Accuracy, Precision, Recall, F1-Score, Confusion Matrix
 
-### Experiment 2: Regression trên dữ liệu giảm chiều
-- Dimensionality Reduction: PCA (giảm xuống 1/3 số chiều)
-- Same models và splits như Exp 1
-
-### Experiment 3: Classification
-- Transform JobSatisfaction → 3 classes (Low, Medium, High)
-- Models: Naive Bayes, Logistic Regression, Decision Tree, SVM
+### Experiment 2: Hồi quy từ Hàm Quyết định
+- Target mới:
+Softmax probability từ Logistic Regression (cho lớp 4)
+Decision function từ SVM (cho lớp 4)
+- Models: Ridge Regression, MLP Regressor
+- Dữ liệu:
+Dữ liệu gốc (scaled)
+Dữ liệu giảm chiều (PCA - 1/3 số chiều gốc)
 - Train/Test splits: 80/20, 70/30, 60/40
+- Metrics: RMSE, MAE, R², Residual Analysis
+
+### Experiment 3: Dimensionality Reduction
+- Methods: PCA, t-SNE
+- PCA variants:
+95% variance retained
+1/3 số chiều gốc
+- Visualization: 2D/3D plots with JobSatisfaction coloring
 
 ### Experiment 4: Clustering
 - Methods: K-Means, GMM
