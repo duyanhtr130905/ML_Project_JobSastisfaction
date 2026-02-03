@@ -1,0 +1,9 @@
+name: Translation Module
+type: module
+description: 'EN-VI Scientific Document Translation System integration for Drupal'
+core_version_requirement: ^9 || ^10
+package: Translation
+dependencies:
+  - drupal:rest
+  - drupal:serialization
+configure: translation_module.settings

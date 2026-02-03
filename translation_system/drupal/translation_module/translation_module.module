@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Translation Module for EN-VI Translation System
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function translation_module_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.translation_module':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('EN-VI Scientific Document Translation System integration for Drupal.') . '</p>';
+      $output .= '<h3>' . t('Features') . '</h3>';
+      $output .= '<ul>';
+      $output .= '<li>' . t('Translate content using MarianMT Edge AI') . '</li>';
+      $output .= '<li>' . t('Smart translation memory with RAG') . '</li>';
+      $output .= '<li>' . t('Knowledge graph for terminology standardization') . '</li>';
+      $output .= '<li>' . t('Analytics integration with Apache Superset') . '</li>';
+      $output .= '</ul>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function translation_module_theme($existing, $type, $theme, $path) {
+  return [
+    'translation_interface' => [
+      'variables' => [
+        'source_text' => NULL,
+        'target_text' => NULL,
+        'translation_info' => [],
+      ],
+      'template' => 'translation-interface',
+    ],
+  ];
+}

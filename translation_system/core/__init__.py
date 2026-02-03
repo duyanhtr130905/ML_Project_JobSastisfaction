@@ -1,0 +1,3 @@
+"""
+Core translation module
+"""
